@@ -1,6 +1,6 @@
-<!-- <form *ngIf="dataService.rankingTable" style="overflow: auto;">
-  <table mat-table [dataSource]="dataService.rankingTable.dataSource" class="mat-elevation-z8">
-    <ng-container *ngFor="let column of dataService.rankingTable.columns" [matColumnDef]="column">
+<form *ngIf="dataService.finalRanking" style="overflow: auto;">
+  <table mat-table [dataSource]="dataService.finalRanking.dataSource" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of dataService.finalRanking.columns" [matColumnDef]="column">
       <th mat-header-cell *matHeaderCellDef>
         {{column === 'none' ? 'Criteria' : column}}
       </th>
@@ -9,13 +9,8 @@
       </td>
     </ng-container>
 
-    <tr mat-header-row *matHeaderRowDef="dataService.rankingTable.columns"></tr>
-    <tr mat-row *matRowDef="let row; columns: dataService.rankingTable.columns;">
+    <tr mat-header-row *matHeaderRowDef="dataService.finalRanking.columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: dataService.finalRanking.columns;">
     </tr>
   </table>
 </form>
-<div class="bottom-btn" style="margin-top: 10px;">
-  <button mat-stroked-button matStepperNext (click)="dataService.setResult()">
-    Show result
-  </button>
-</div> -->

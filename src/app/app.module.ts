@@ -61,7 +61,6 @@ import { FuzzyDirectRelationMatrixComponent } from './pages/fuzzy-direct-relatio
 import { NormalizedFuzzyDirectRelationMatrixComponent } from "./pages/normalized-fuzzy-direct-relation-matrix/normalized-fuzzy-direct-relation-matrix.component";
 import { FuzzyTotalRelationMatrixComponent } from './pages/fuzzy-total-relation-matrix/fuzzy-total-relation-matrix.component';
 import { RankingComponent } from "./pages/ranking/ranking.component";
-import { ResultComponent } from "./pages/result/result.component";
 
 @NgModule({
   imports: [
@@ -125,7 +124,6 @@ import { ResultComponent } from "./pages/result/result.component";
     FuzzyDirectRelationMatrixComponent,
     NormalizedFuzzyDirectRelationMatrixComponent,
     FuzzyTotalRelationMatrixComponent,
-    ResultComponent,
     RankingComponent,
   ],
   bootstrap: [AppComponent]

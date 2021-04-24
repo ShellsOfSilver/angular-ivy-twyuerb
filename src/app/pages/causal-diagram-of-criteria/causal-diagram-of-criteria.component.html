@@ -12,9 +12,16 @@
     <tr mat-header-row *matHeaderRowDef="dataService.causalDiagramOfCriteria.columns"></tr>
     <tr mat-row *matRowDef="let row; columns: dataService.causalDiagramOfCriteria.columns;"></tr>
   </table>
+
+  <canvas baseChart width="600" height="200" [datasets]="dataService?.lineChartData"
+    [labels]="dataService?.lineChartLabels" [options]="dataService?.lineChartOptions"
+    [colors]="dataService?.lineChartColors" [legend]="dataService?.lineChartLegend"
+    [chartType]="dataService?.lineChartType" [plugins]="dataService?.lineChartPlugins">
+  </canvas>
 </form>
+
 <div class="bottom-btn" style="margin-top: 10px;">
-  <!-- <button mat-stroked-button matStepperNext (click)="dataService.setBestWorstF()">
-    Show the best and worst value f*, fo
-  </button> -->
+  <button mat-stroked-button matStepperNext (click)="dataService.setRanking()">
+    Show final ranking of criteria
+  </button>
 </div>
