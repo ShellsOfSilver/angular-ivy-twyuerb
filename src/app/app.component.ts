@@ -17,43 +17,41 @@ export class AppComponent implements OnInit {
   test(stepper) {
     setTimeout(() => {
       this.dataService.setInitRandom();
-      this.dataService.setImportanceCriteria();
+      this.dataService.setExpertMatrix();
       stepper.next();
       setTimeout(() => {
-        this.dataService.setImportanceRandom();
-        this.dataService.setBenefitsCost();
+        this.dataService.setMatrixRandom();
+        this.dataService.setFuzzyDirectRelationMatrix();
         stepper.next();
         setTimeout(() => {
-          this.dataService.setBenefitsCostsRandom();
-          this.dataService.setExpertMatrix();
+          this.dataService.setNormalizedFuzzyDirectRelationMatrix();
           stepper.next();
           setTimeout(() => {
-            this.dataService.setMatrixRandom();
-            this.dataService.setAggregationMatrix();
+            this.dataService.setFuzzyTotalRelationMatrix();
             stepper.next();
             setTimeout(() => {
-              this.dataService.setBestWorstF()
-              stepper.next();
-              setTimeout(() => {
-                this.dataService.setNormalizedFuzzyDifferenceD();
-                stepper.next();
-                setTimeout(() => {
-                  this.dataService.setSRQ();
-                  stepper.next();
-                  setTimeout(() => {
-                    this.dataService.setDefuzzification();
-                    stepper.next();
-                    setTimeout(() => {
-                      this.dataService.setRanking();
-                      stepper.next();
-                      setTimeout(() => {
-                        this.dataService.setResult();
-                        stepper.next();
-                      });
-                    });
-                  });
-                });
-              });
+              //           this.dataService.setBestWorstF()
+              //           stepper.next();
+              //           setTimeout(() => {
+              //             this.dataService.setNormalizedFuzzyDifferenceD();
+              //             stepper.next();
+              //             setTimeout(() => {
+              //               this.dataService.setSRQ();
+              //               stepper.next();
+              //               setTimeout(() => {
+              //                 this.dataService.setDefuzzification();
+              //                 stepper.next();
+              //                 setTimeout(() => {
+              //                   this.dataService.setRanking();
+              //                   stepper.next();
+              //                   setTimeout(() => {
+              //                     this.dataService.setResult();
+              //                     stepper.next();
+              //                   });
+              //                 });
+              //               });
+              //             });
+              //           });
             });
           });
         });

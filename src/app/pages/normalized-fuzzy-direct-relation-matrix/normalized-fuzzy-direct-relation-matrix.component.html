@@ -1,0 +1,21 @@
+<form *ngIf="dataService?.normalizedFuzzyDirectRelationMatrix" style="overflow: auto;">
+  <h3>r = {{dataService?.normalizedFuzzyDirectRelationR}}</h3>
+  <table mat-table [dataSource]="dataService?.normalizedFuzzyDirectRelationMatrix?.dataSource" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of dataService?.normalizedFuzzyDirectRelationMatrix?.columns" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef>
+        {{column === 'none' ? '' : column}}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{element[column].data}}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="dataService?.normalizedFuzzyDirectRelationMatrix?.columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: dataService?.normalizedFuzzyDirectRelationMatrix?.columns;"></tr>
+  </table>
+</form>
+<div class="bottom-btn" style="margin-top: 10px;">
+  <button mat-stroked-button matStepperNext (click)="dataService.setFuzzyTotalRelationMatrix()">
+    Show fuzzy total-relation matrix
+  </button>
+</div>

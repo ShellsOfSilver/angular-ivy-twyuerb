@@ -5,17 +5,31 @@
     <ng-template matStepLabel>Init</ng-template>
     <my-init></my-init>
   </mat-step>
-  <mat-step [stepControl]="dataService.importanceCriteriaForm">
-    <ng-template matStepLabel>Importance of criteria</ng-template>
-    <app-importance-criteria></app-importance-criteria>
-  </mat-step>
-  <mat-step [stepControl]="dataService.benefitsCostsForm">
-    <ng-template matStepLabel>Benefits | costs</ng-template>
-    <app-benefits-costs></app-benefits-costs>
-  </mat-step>
   <mat-step [stepControl]="dataService.expertMatrixForm">
     <ng-template matStepLabel>Expert assessments</ng-template>
     <my-expert-matrix></my-expert-matrix>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Show fuzzy direct-relation matrix</ng-template>
+    <app-fuzzy-direct-relation-matrix></app-fuzzy-direct-relation-matrix>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Show normalized fuzzy direct relation matrix</ng-template>
+    <app-normalized-fuzzy-direct-relation-matrix></app-normalized-fuzzy-direct-relation-matrix>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Show fuzzy total-relation matrix</ng-template>
+    <app-fuzzy-total-relation-matrix></app-fuzzy-total-relation-matrix>
+  </mat-step>
+
+  
+  <!--  <mat-step [stepControl]="dataService.benefitsCostsForm">
+    <ng-template matStepLabel>Benefits | costs</ng-template>
+    <app-benefits-costs></app-benefits-costs>
+  </mat-step>
+  <mat-step [stepControl]="dataService.importanceCriteriaForm">
+    <ng-template matStepLabel>Importance of criteria</ng-template>
+    <app-importance-criteria></app-importance-criteria>
   </mat-step>
   <mat-step>
     <ng-template matStepLabel>Show aggregation matrix</ng-template>
@@ -44,5 +58,5 @@
   <mat-step>
     <ng-template matStepLabel> Show result</ng-template>
     <app-result></app-result>
-  </mat-step>
+  </mat-step> -->
 </mat-vertical-stepper>

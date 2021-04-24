@@ -13,8 +13,3 @@ td.mat-cell:last-of-type,
 td.mat-footer-cell:last-of-type {
   padding-right: 0;
 }
-
-.disabledS {
-  background: #ececec;
-  pointer-events: none;
-}

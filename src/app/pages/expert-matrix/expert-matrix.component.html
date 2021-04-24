@@ -4,16 +4,16 @@
     <table mat-table [dataSource]="table.dataSource" class="mat-elevation-z8">
       <ng-container *ngFor="let column of table.columns" [matColumnDef]="column">
         <th mat-header-cell *matHeaderCellDef>
-          {{column === 'none' ? 'Criteria' : column}}
+          {{column === 'none' ? '' : column}}
         </th>
         <td mat-cell *matCellDef="let element">
           <div *ngIf="element[column].start">
             {{element[column].data}}
           </div>
-          <div *ngIf="!element[column].start">
+          <div *ngIf="!element[column].start"  [class.disabledS] = "element[column].disabled">
             <mat-form-field>
               <mat-select [formControlName]="element[column].id" required>
-                <mat-option *ngFor="let item of dataService.listOfExpertAssesments" [value]="item.value">
+                <mat-option *ngFor="let item of dataService.listOfCriterias" [value]="item.value">
                   {{item.viewValue}}
                 </mat-option>
               </mat-select>
@@ -31,7 +31,7 @@
   <button mat-stroked-button (click)="dataService.setMatrixRandom()">
     Set random value
   </button>
-  <button mat-stroked-button matStepperNext (click)="dataService.setAggregationMatrix()">
-    Show aggregation
+  <button mat-stroked-button matStepperNext (click)="dataService.setFuzzyDirectRelationMatrix()">
+    Show fuzzy direct-relation matrix
   </button>
 </div>
