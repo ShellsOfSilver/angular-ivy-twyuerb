@@ -1,0 +1,21 @@
+<form *ngIf="dataService.defuzzificationTable" style="overflow: auto;">
+  <table mat-table [dataSource]="dataService.defuzzificationTable.dataSource" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of dataService.defuzzificationTable.columns" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef>
+        {{column === 'none' ? 'Criteria' : column}}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{element[column].data}}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="dataService.defuzzificationTable.columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: dataService.defuzzificationTable.columns;">
+    </tr>
+  </table>
+</form>
+<div class="bottom-btn" style="margin-top: 10px;">
+  <button mat-stroked-button matStepperNext (click)="dataService.setRanking()">
+    Show ranking of S, R and Q
+  </button>
+</div>

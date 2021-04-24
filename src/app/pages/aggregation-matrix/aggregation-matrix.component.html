@@ -1,0 +1,37 @@
+<form *ngIf="dataService.aggregationMatrixCriteriaTable" style="overflow: auto;">
+  <h3>Aggregation Weight ( Criteria )</h3>
+  <table mat-table [dataSource]="dataService.aggregationMatrixCriteriaTable.dataSource" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of dataService.aggregationMatrixCriteriaTable.columns" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef>
+        {{column === 'none' ? 'Criteria' : column}}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{element[column].data}}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="dataService.aggregationMatrixCriteriaTable.columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: dataService.aggregationMatrixCriteriaTable.columns;"></tr>
+  </table>
+</form>
+<form *ngIf="dataService.aggregationMatrixAlternativeTable" style="overflow: auto;">
+  <h3>Aggregation Weight ( Alternative )</h3>
+  <table mat-table [dataSource]="dataService.aggregationMatrixAlternativeTable.dataSource" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of dataService.aggregationMatrixAlternativeTable.columns" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef>
+        {{column === 'none' ? 'Criteria' : column}}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{element[column].data}}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="dataService.aggregationMatrixAlternativeTable.columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: dataService.aggregationMatrixAlternativeTable.columns;"></tr>
+  </table>
+</form>
+<div class="bottom-btn" style="margin-top: 10px;">
+  <button mat-stroked-button matStepperNext (click)="dataService.setBestWorstF()">
+    Show the best and worst value f*, fo
+  </button>
+</div>

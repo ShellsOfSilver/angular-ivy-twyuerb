@@ -1,0 +1,21 @@
+<form *ngIf="dataService.normalizedFuzzyDifferenceDTable" style="overflow: auto;">
+  <table mat-table [dataSource]="dataService.normalizedFuzzyDifferenceDTable.dataSource" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of dataService.normalizedFuzzyDifferenceDTable.columns" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef>
+        {{column === 'none' ? 'Criteria' : column}}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{element[column].data}}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="dataService.normalizedFuzzyDifferenceDTable.columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: dataService.normalizedFuzzyDifferenceDTable.columns;">
+    </tr>
+  </table>
+</form>
+<div class="bottom-btn" style="margin-top: 10px;">
+  <button mat-stroked-button matStepperNext (click)="dataService.setSRQ()">
+  Show S, R and Q
+  </button>
+</div>

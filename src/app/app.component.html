@@ -1,0 +1,48 @@
+<button (click)="test(stepper)">Random</button>
+<h2 style="text-align: center;">Skakun 501</h2>
+<mat-vertical-stepper [linear]="true" #stepper>
+  <mat-step [stepControl]="dataService.initFormGroup">
+    <ng-template matStepLabel>Init</ng-template>
+    <my-init></my-init>
+  </mat-step>
+  <mat-step [stepControl]="dataService.importanceCriteriaForm">
+    <ng-template matStepLabel>Importance of criteria</ng-template>
+    <app-importance-criteria></app-importance-criteria>
+  </mat-step>
+  <mat-step [stepControl]="dataService.benefitsCostsForm">
+    <ng-template matStepLabel>Benefits | costs</ng-template>
+    <app-benefits-costs></app-benefits-costs>
+  </mat-step>
+  <mat-step [stepControl]="dataService.expertMatrixForm">
+    <ng-template matStepLabel>Expert assessments</ng-template>
+    <my-expert-matrix></my-expert-matrix>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Show aggregation matrix</ng-template>
+    <app-aggregation-matrix></app-aggregation-matrix>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Show best and worst value f*, fo</ng-template>
+    <app-best-and-worst-f></app-best-and-worst-f>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Show normalized fuzzy difference d</ng-template>
+    <app-normalized-fuzzy-difference-d></app-normalized-fuzzy-difference-d>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Show S, R and Q</ng-template>
+    <app-s-r-q></app-s-r-q>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Show defuzzification of S, R and Q</ng-template>
+    <app-defuzzification></app-defuzzification>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Show ranking of S, R and Q</ng-template>
+    <app-ranking></app-ranking>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel> Show result</ng-template>
+    <app-result></app-result>
+  </mat-step>
+</mat-vertical-stepper>

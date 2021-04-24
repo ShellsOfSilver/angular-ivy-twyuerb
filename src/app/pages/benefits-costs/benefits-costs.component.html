@@ -1,0 +1,29 @@
+<form style="overflow: auto;" *ngIf="dataService.benefitsCostsForm" [formGroup]="dataService.benefitsCostsForm">
+  <table mat-table [dataSource]="dataService.benefitsCostsTable.dataSource" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of dataService.benefitsCostsTable.columns" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef>
+        {{column === 'none' ? 'Criteria' : column}}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        <div *ngIf="element[column].start">
+          {{element[column].data}}
+        </div>
+        <div *ngIf="!element[column].start">
+          <mat-checkbox [formControlName]="element[column].id">is benefit?</mat-checkbox>
+        </div>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="dataService.benefitsCostsTable.columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: dataService.benefitsCostsTable.columns;"></tr>
+  </table>
+</form>
+
+<div class="bottom-btn" style="margin-top: 10px;">
+  <button mat-stroked-button (click)="dataService.setBenefitsCostsRandom()">
+    Set random value
+  </button>
+  <button mat-stroked-button matStepperNext (click)="dataService.setExpertMatrix()">
+    Set Expert assessments
+  </button>
+</div>

@@ -1,0 +1,21 @@
+<form *ngIf="dataService.srqTable" style="overflow: auto;">
+  <table mat-table [dataSource]="dataService.srqTable.dataSource" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of dataService.srqTable.columns" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef>
+        {{column === 'none' ? '' : column}}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{element[column].data}}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="dataService.srqTable.columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: dataService.srqTable.columns;">
+    </tr>
+  </table>
+</form>
+<div class="bottom-btn" style="margin-top: 10px;">
+  <button mat-stroked-button matStepperNext (click)="dataService.setDefuzzification()">
+    Show defuzzification of S, R and Q
+  </button>
+</div>
