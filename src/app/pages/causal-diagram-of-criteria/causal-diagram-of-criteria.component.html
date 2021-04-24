@@ -1,0 +1,20 @@
+<form *ngIf="dataService.causalDiagramOfCriteria" style="overflow: auto;">
+  <table mat-table [dataSource]="dataService.causalDiagramOfCriteria.dataSource" class="mat-elevation-z8">
+    <ng-container *ngFor="let column of dataService.causalDiagramOfCriteria.columns" [matColumnDef]="column">
+      <th mat-header-cell *matHeaderCellDef>
+        {{column === 'none' ? 'Criteria' : column}}
+      </th>
+      <td mat-cell *matCellDef="let element">
+        {{element[column].data}}
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="dataService.causalDiagramOfCriteria.columns"></tr>
+    <tr mat-row *matRowDef="let row; columns: dataService.causalDiagramOfCriteria.columns;"></tr>
+  </table>
+</form>
+<div class="bottom-btn" style="margin-top: 10px;">
+  <!-- <button mat-stroked-button matStepperNext (click)="dataService.setBestWorstF()">
+    Show the best and worst value f*, fo
+  </button> -->
+</div>

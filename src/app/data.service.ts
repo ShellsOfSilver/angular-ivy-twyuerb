@@ -41,6 +41,10 @@ export class DataService {
     columns: Array<string>;
     dataSource: any;
   };
+  causalDiagramOfCriteria: {
+    columns: Array<string>;
+    dataSource: any;
+  };
   // aggregationMatrixCriteriaTable: {
   //   columns: Array<string>;
   //   dataSource: any;
@@ -346,6 +350,10 @@ export class DataService {
       columns: this.normalizedFuzzyDirectRelationMatrix.columns,
       dataSource
     };
+  }
+
+  setCausalDiagramOfCriteria() {
+
   }
 
   // setImportanceCriteria() {

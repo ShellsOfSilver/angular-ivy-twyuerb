@@ -56,14 +56,10 @@ import { OverlayModule } from "@angular/cdk/overlay";
 import { AppComponent } from "./app.component";
 import { InitComponent } from "./pages/init/init.component";
 import { ExpertMatrixComponent } from "./pages/expert-matrix/expert-matrix.component";
-import { ImportanceCriteriaComponent } from "./pages/importance-criteria/importance-criteria.component";
-import { AggregationMatrixComponent } from "./pages/aggregation-matrix/aggregation-matrix.component";
+import { CausalDiagramOfCriteriaComponent } from "./pages/causal-diagram-of-criteria/causal-diagram-of-criteria.component";
 import { FuzzyDirectRelationMatrixComponent } from './pages/fuzzy-direct-relation-matrix/fuzzy-direct-relation-matrix.component';
 import { NormalizedFuzzyDirectRelationMatrixComponent } from "./pages/normalized-fuzzy-direct-relation-matrix/normalized-fuzzy-direct-relation-matrix.component";
 import { FuzzyTotalRelationMatrixComponent } from './pages/fuzzy-total-relation-matrix/fuzzy-total-relation-matrix.component';
-import { BestAndWorstFComponent } from './pages/best-and-worst-f/best-and-worst-f.component';
-import { DefuzzificationComponent } from './pages/defuzzification/defuzzification.component';
-import { BenefitsCostsComponent } from './pages/benefits-costs/benefits-costs.component';
 import { RankingComponent } from "./pages/ranking/ranking.component";
 import { ResultComponent } from "./pages/result/result.component";
 
@@ -125,14 +121,10 @@ import { ResultComponent } from "./pages/result/result.component";
     AppComponent,
     InitComponent,
     ExpertMatrixComponent,
-    ImportanceCriteriaComponent,
-    AggregationMatrixComponent,
+    CausalDiagramOfCriteriaComponent,
     FuzzyDirectRelationMatrixComponent,
     NormalizedFuzzyDirectRelationMatrixComponent,
-    BestAndWorstFComponent,
     FuzzyTotalRelationMatrixComponent,
-    DefuzzificationComponent,
-    BenefitsCostsComponent,
     ResultComponent,
     RankingComponent,
   ],

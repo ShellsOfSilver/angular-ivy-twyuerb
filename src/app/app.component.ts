@@ -30,28 +30,28 @@ export class AppComponent implements OnInit {
             this.dataService.setFuzzyTotalRelationMatrix();
             stepper.next();
             setTimeout(() => {
-              //           this.dataService.setBestWorstF()
-              //           stepper.next();
-              //           setTimeout(() => {
-              //             this.dataService.setNormalizedFuzzyDifferenceD();
-              //             stepper.next();
-              //             setTimeout(() => {
-              //               this.dataService.setSRQ();
-              //               stepper.next();
-              //               setTimeout(() => {
-              //                 this.dataService.setDefuzzification();
-              //                 stepper.next();
-              //                 setTimeout(() => {
-              //                   this.dataService.setRanking();
-              //                   stepper.next();
-              //                   setTimeout(() => {
-              //                     this.dataService.setResult();
-              //                     stepper.next();
-              //                   });
-              //                 });
-              //               });
-              //             });
-              //           });
+              this.dataService.setCausalDiagramOfCriteria()
+              stepper.next();
+              setTimeout(() => {
+                //             this.dataService.setNormalizedFuzzyDifferenceD();
+                //             stepper.next();
+                //             setTimeout(() => {
+                //               this.dataService.setSRQ();
+                //               stepper.next();
+                //               setTimeout(() => {
+                //                 this.dataService.setDefuzzification();
+                //                 stepper.next();
+                //                 setTimeout(() => {
+                //                   this.dataService.setRanking();
+                //                   stepper.next();
+                //                   setTimeout(() => {
+                //                     this.dataService.setResult();
+                //                     stepper.next();
+                //                   });
+                //                 });
+                //               });
+                //             });
+              });
             });
           });
         });
