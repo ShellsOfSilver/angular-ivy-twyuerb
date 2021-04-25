@@ -84,7 +84,7 @@ export class DataService {
 
   initForm() {
     this.initFormGroup = this._formBuilder.group({
-      numberAlternatives: ["", Validators.min(3)],
+      // numberAlternatives: ["", Validators.min(3)],
       numberCriteria: ["", Validators.min(3)],
       numberExperts: ["", Validators.min(3)]
     });
@@ -92,7 +92,7 @@ export class DataService {
 
   setInitRandom() {
     this.initFormGroup.setValue({
-      numberAlternatives: 7,
+      // numberAlternatives: 7,
       numberCriteria: 6,
       numberExperts: 5
     });
